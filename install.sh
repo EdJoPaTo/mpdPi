@@ -7,4 +7,5 @@ sudo chown -R mpd:audio /var/lib/mpd/
 
 mpc -q update --wait
 mpc -q load Chillout
+mpc -q volume 100
 mpc play
