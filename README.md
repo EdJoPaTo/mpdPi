@@ -1,6 +1,6 @@
 # MPD on the Raspberry Pi
 
-This project installs [MPD](https://www.musicpd.org/) on the Raspberry Pi, copies the webradio playlist and starts playing. endlessly.
+This project installs [MPD](https://www.musicpd.org/) on the Raspberry Pi, copies the webradio playlist and starts playing. Endlessly.
 
 # Install
 
@@ -21,7 +21,7 @@ Rerun the `install.sh` script in order to apply the change.
 
 ## Configure shairport-sync
 
-[shairport-sync](https://github.com/mikebrady/shairport-sync) allows the Pi to be AirPlay Target.
+[shairport-sync](https://github.com/mikebrady/shairport-sync) allows the Pi to be an AirPlay Target.
 In order to stop the mpd playback while using it as an AirPlay target use the following settings in `/etc/shairport-sync.conf`:
 
 ```
