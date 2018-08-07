@@ -7,13 +7,9 @@ sudo apt install -y mpd mpc shairport-sync
 sudo cp playlists/* /var/lib/mpd/playlists/
 sudo chown -R mpd:audio /var/lib/mpd/
 
-# copy systemd units
+# systemd
 sudo cp -uv systemd/* /etc/systemd/system
-
-# reload systemd
 sudo systemctl daemon-reload
-
-# start automatic restart timer
 sudo systemctl enable mpd-restart.timer
 sudo systemctl start mpd-restart.timer
 
