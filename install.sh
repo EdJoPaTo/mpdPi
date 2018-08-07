@@ -26,6 +26,7 @@ sudo systemctl restart shairport-sync.service
 
 # start default stream
 mpc -q update --wait
+mpc -q clear
 mpc -q load Chillout
 mpc -q volume 100
 mpc play
