@@ -20,3 +20,9 @@ Shortly after that the mpd should be restarted in order to continue playback. Th
 
 Changing the time can be done inside the `systemd/mpd-restart.timer` file.
 Rerun the `install.sh` script in order to apply the change.
+
+## Know Issues
+
+When shairport-sync is running, the volume is set higher in order to be able to adjust the volume from the AirPlay source.
+When the pi crashes or reboots while its playing via AirPlay and gets restarted, the volume is still high.
+The internet radio after the next startup WILL be loud.
