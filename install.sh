@@ -10,15 +10,15 @@ sudo chown -R mpd:audio /var/lib/mpd/
 # just make sure mpd is running correctly
 sudo systemctl restart mpd
 
+# system-scripts
+sudo mkdir -p /usr/lib/mpd-pi
+sudo cp -uv scripts/* /usr/lib/mpd-pi
+
 # systemd
 sudo cp -uv systemd/* /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable mpd-restart.timer
 sudo systemctl start mpd-restart.timer
-
-# system-scripts
-sudo mkdir -p /usr/lib/mpd-pi
-sudo cp -uv scripts/* /usr/lib/mpd-pi
 
 # shairport-sync config
 sudo cp -uv shairport-sync.conf /etc/shairport-sync.conf
