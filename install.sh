@@ -8,7 +8,7 @@ sudo cp playlists/* /var/lib/mpd/playlists/
 sudo chown -R mpd:audio /var/lib/mpd/
 
 # just make sure mpd is running correctly
-sudo systemctl restart mpd
+sudo systemctl restart mpd.service
 
 # system-scripts
 sudo mkdir -p /usr/lib/mpd-pi
