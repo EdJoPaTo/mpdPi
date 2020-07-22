@@ -1,4 +1,4 @@
 #!/bin/sh
 
 /usr/bin/mpc stop
-/usr/bin/mpc volume 100
+/usr/bin/amixer -q set Headphone 100%
