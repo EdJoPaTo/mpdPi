@@ -12,6 +12,45 @@ Follow the configure sections for adaptations.
 The installation script is specifically made for a Raspberry Pi and tested on a Raspberry Pi 1 B.
 On other systems you may have to adapt the installation.
 
+## Allow usage of `mpc volume`
+
+`mpc volume` does not seem to work out of the box.
+Check the controller you want to set via `amixer scontents`.
+
+For the AUX on the Raspberry this is 'Headphone':
+```plaintext
+Simple mixer control 'Headphone',0
+  Capabilities: pvolume pvolume-joined pswitch pswitch-joined
+  Playback channels: Mono
+  Limits: Playback -10239 - 400
+  Mono: Playback -2791 [70%] [-27.91dB] [on]
+```
+
+For the HiFiBerry Amp2 this is 'Digital':
+```plaintext
+Simple mixer control 'Digital',0
+  Capabilities: pvolume pswitch
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 207
+  Mono:
+  Front Left: Playback 104 [50%] [-51.50dB] [on]
+  Front Right: Playback 104 [50%] [-51.50dB] [on]
+```
+
+Set this controller in the `/etc/mpd.conf`:
+```plain
+audio_output {
+        type            "alsa"
+        name            "My ALSA Device"
+#       device          "hw:0,0"        # optional
+#       mixer_device    "default"       # optional
+        mixer_control   "Digital"
+}
+```
+
+
+(Sadly I had no luck setting that controller as Alsa default in order to let MPD autodetect it. Hints welcome!)
+
 ## Configure automatic restart
 
 The FRITZ!Box at home automatically resets the network connection at 5-6.
