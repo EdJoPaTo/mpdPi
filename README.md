@@ -15,7 +15,7 @@ On other systems you may have to adapt the installation.
 ## Allow usage of `mpc volume`
 
 `mpc volume` does not seem to work out of the box.
-Check the controller you want to set via `amixer scontents`.
+Find the control you want to set via `amixer scontents`.
 
 For the AUX on the Raspberry this is 'Headphone':
 ```plaintext
@@ -37,14 +37,14 @@ Simple mixer control 'Digital',0
   Front Right: Playback 104 [50%] [-51.50dB] [on]
 ```
 
-Set this controller in the `/etc/mpd.conf`:
+Set this control in the `/etc/mpd.conf`:
 ```plain
 audio_output {
         type            "alsa"
         name            "My ALSA Device"
 #       device          "hw:0,0"        # optional
 #       mixer_device    "default"       # optional
-        mixer_control   "Digital"
+        mixer_control   "Headphone"
 }
 ```
 
