@@ -24,7 +24,7 @@ sudo cp -uv scripts/* /usr/lib/mpd-pi
 # systemd
 sudo cp -uv systemd/* /etc/systemd/system
 sudo systemctl daemon-reload
-sudo systemctl enable --now mpd-internetradio-destuck.timer
+sudo systemctl enable --now mpd-internetradio-destuck.service
 sudo systemctl enable --now mpd-restart.timer
 
 # shairport-sync config
