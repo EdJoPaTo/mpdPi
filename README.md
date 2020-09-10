@@ -69,3 +69,6 @@ For Raspberry Pi 1 this has to be built manually for now (did that, works).
 When shairport-sync is running, the volume is set higher in order to be able to adjust the volume from the AirPlay source.
 When the pi crashes or reboots while its playing via AirPlay and gets restarted, the volume is still high.
 The internet radio after the next startup WILL be loud.
+
+shairport-sync does not start when general.name is set.
+Looks ugly but works.
