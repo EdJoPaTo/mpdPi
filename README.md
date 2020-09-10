@@ -60,6 +60,10 @@ Shortly after that the mpd should be restarted in order to continue playback. Th
 Changing the time can be done inside the `systemd/mpd-restart.timer` file.
 Rerun the `install.sh` script in order to apply the change.
 
+[mpd-internetradio-destuck](https://github.com/EdJoPaTo/mpd-internetradio-destuck) fixes the same issue but independently of time.
+The install script downloads the prebuilt binary for Raspberry Pi 2 and later (ARMv7).
+For Raspberry Pi 1 this has to be built manually for now (did that, works).
+
 ## Know Issues
 
 When shairport-sync is running, the volume is set higher in order to be able to adjust the volume from the AirPlay source.
