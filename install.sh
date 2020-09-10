@@ -24,11 +24,9 @@ sudo systemctl start mpd-restart.timer
 sudo cp -uv shairport-sync.conf /etc/shairport-sync.conf
 sudo systemctl restart shairport-sync.service
 
-# Set volume
-/usr/bin/amixer -q set Headphone 70%
-
 # start default stream
 mpc -q update --wait
 mpc -q clear
 mpc -q load Chillout
+mpc -q volume 70
 mpc play
