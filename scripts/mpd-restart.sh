@@ -1,6 +1,5 @@
 #!/bin/sh
 
-/bin/systemctl restart mpd.service
 /usr/bin/mpc -q clear
 /usr/bin/mpc -q update --wait
 /usr/bin/mpc -q volume 70
