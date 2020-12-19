@@ -31,9 +31,4 @@ sudo systemctl enable --now mpd-restart.timer
 sudo cp -uv shairport-sync.conf /etc/shairport-sync.conf
 sudo systemctl restart shairport-sync.service
 
-# start default stream
-mpc -q update --wait
-mpc -q clear
-mpc -q load Chillout
-mpc -q volume 70
-mpc play
+/usr/lib/mpd-pi/mpd-restart.sh
