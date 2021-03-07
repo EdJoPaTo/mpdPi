@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install mpd
-sudo apt install -y mpd mpc shairport-sync
+sudo apt-get install -y mpd mpc shairport-sync
 
 # copy playlists
 sudo cp playlists/* /var/lib/mpd/playlists/
