@@ -15,11 +15,12 @@ wget -q --show-progress -O - https://github.com/EdJoPaTo/mpd-internetradio-destu
 sudo cp -uv mpd-internetradio-destuck /usr/local/bin/
 
 # system-scripts
-sudo mkdir -p /usr/lib/mpd-pi
-sudo cp -uv scripts/* /usr/lib/mpd-pi
+sudo mkdir -p /usr/local/lib/mpd-pi/
+sudo cp -uv scripts/* /usr/local/lib/mpd-pi/
 
 # systemd
-sudo cp -uv systemd/* /etc/systemd/system
+sudo mkdir -p /usr/local/lib/systemd/system/
+sudo cp -uv systemd/* /usr/local/lib/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now mpd-internetradio-destuck.service
 sudo systemctl enable --now mpd-restart.timer
@@ -28,4 +29,4 @@ sudo systemctl enable --now mpd-restart.timer
 sudo cp -uv shairport-sync.conf /etc/shairport-sync.conf
 sudo systemctl restart shairport-sync.service
 
-/usr/lib/mpd-pi/mpd-restart.sh
+/usr/local/lib/mpd-pi/mpd-restart.sh
