@@ -1,8 +1,8 @@
 # MPD on the Raspberry Pi
 
-This project installs [MPD](https://www.musicpd.org/) on the Raspberry Pi, copies the webradio playlist and starts playing. Endlessly.
+This project installs [MPD](https://www.musicpd.org/) on the Raspberry Pi, copies the web radio playlist and starts playing. Endlessly.
 
-Also it is possible to stream AirPlay to the Raspberry Pi via [shairport-sync](https://github.com/mikebrady/shairport-sync).
+Also, it is possible to stream AirPlay to the Raspberry Pi via [shairport-sync](https://github.com/mikebrady/shairport-sync).
 
 # Install
 
@@ -61,14 +61,14 @@ Changing the time can be done inside the `systemd/mpd-restart.timer` file.
 Rerun the `install.sh` script in order to apply the change.
 
 [mpd-internetradio-destuck](https://github.com/EdJoPaTo/mpd-internetradio-destuck) fixes the same issue but independently of time.
-The install script downloads the prebuilt binary for Raspberry Pi 2 and later (ARMv7).
+The `install.sh` script downloads the prebuilt binary for Raspberry Pi 2 and later (ARMv7).
 For Raspberry Pi 1 this has to be built manually for now (did that, works).
 
 ## Know Issues
 
-When shairport-sync is running, the volume is set higher in order to be able to adjust the volume from the AirPlay source.
-When the pi crashes or reboots while its playing via AirPlay and gets restarted, the volume is still high.
+When `shairport-sync` is running, the volume is set higher in order to be able to adjust the volume from the AirPlay source.
+When the pi crashes or reboots while it's playing via AirPlay and gets restarted, the volume is still high.
 The internet radio after the next startup WILL be loud.
 
-shairport-sync does not start when general.name is set.
+`shairport-sync` does not start when general.name is set.
 Looks ugly but works.
