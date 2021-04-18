@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # install mpd
 sudo apt-get install -y mpd mpc shairport-sync

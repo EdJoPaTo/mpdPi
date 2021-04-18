@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 /usr/bin/mpc -q clear
 /usr/bin/mpc -q update --wait
