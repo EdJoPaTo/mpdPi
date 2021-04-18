@@ -62,7 +62,7 @@ Rerun the `install.sh` script in order to apply the change.
 
 [mpd-internetradio-destuck](https://github.com/EdJoPaTo/mpd-internetradio-destuck) fixes the same issue but independently of time.
 The `install.sh` script downloads the prebuilt binary for Raspberry Pi 2 and later (ARMv7).
-For Raspberry Pi 1 this has to be built manually for now (did that, works).
+For Raspberry Pi 1 adapt the link in the `install.sh` script downloading the tool.
 
 ## Know Issues
 
