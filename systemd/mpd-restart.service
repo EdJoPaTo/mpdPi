@@ -8,6 +8,3 @@ Type=oneshot
 ExecStart=/usr/lib/mpd-pi/mpd-restart.sh
 User=mpd
 Group=audio
-
-[Install]
-RequiredBy=multi-user.target
