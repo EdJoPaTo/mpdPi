@@ -9,7 +9,7 @@ Also, it is possible to stream AirPlay to the Raspberry Pi via [shairport-sync](
 Use the `install.sh` script to install.
 Follow the configure sections for adaptations.
 
-The installation script is specifically made for a Raspberry Pi and tested on a Raspberry Pi 1 B.
+The installation script is specifically made for a Raspberry Pi and tested on a Raspberry Pi 3B with 32-bit Raspberry Pi OS.
 On other systems you may have to adapt the installation.
 
 ## Allow usage of `mpc volume`
@@ -61,14 +61,12 @@ Changing the time can be done inside the `systemd/mpd-restart.timer` file.
 Rerun the `install.sh` script in order to apply the change.
 
 [mpd-internetradio-destuck](https://github.com/EdJoPaTo/mpd-internetradio-destuck) fixes the same issue but independently of time.
-The `install.sh` script downloads the prebuilt binary for Raspberry Pi 2 and later (ARMv7).
-For Raspberry Pi 1 adapt the link in the `install.sh` script downloading the tool.
+The `install.sh` script downloads the deb package for Raspberry Pi 1 and later (ARMv6).
+When running an arm64 build of your OS adapt the download link in the `install.sh`.
+ARMv7 (32 bit) should work just fine with the ARMv6 executable.
 
 ## Know Issues
 
 When `shairport-sync` is running, the volume is set higher in order to be able to adjust the volume from the AirPlay source.
-When the pi crashes or reboots while it's playing via AirPlay and gets restarted, the volume is still high.
+When the pi is rebooted while it's playing via AirPlay and gets restarted, the volume is still high.
 The internet radio after the next startup WILL be loud.
-
-`shairport-sync` does not start when general.name is set.
-Looks ugly but works.

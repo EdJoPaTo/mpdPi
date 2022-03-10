@@ -12,7 +12,9 @@ sudo chown -R mpd:audio /var/lib/mpd/
 sudo systemctl restart mpd.service
 
 # download mpd-internetradio-destuck
-wget -q --show-progress -O - https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.3/mpd-internetradio-destuck-v0.2.3-armv7-unknown-linux-gnueabihf.tar.gz | tar xz
+wget -q --show-progress -O mpd-internetradio-destuck.deb \
+    https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.4/mpd-internetradio-destuck-v0.2.4-arm-unknown-linux-gnueabihf.deb
+sudo dpkg -i mpd-internetradio-destuck.deb
 
 # system-scripts
 sudo mkdir -p /usr/local/lib/mpd-pi/
@@ -22,10 +24,6 @@ sudo cp -uv scripts/* /usr/local/lib/mpd-pi/
 sudo mkdir -p /usr/local/lib/systemd/system/
 sudo cp -uv systemd/* /usr/local/lib/systemd/system/
 sudo systemctl daemon-reload
-
-# install mpd-internetradio-destuck
-sudo systemctl stop mpd-internetradio-destuck.service
-sudo cp -uv mpd-internetradio-destuck /usr/local/bin/
 
 # Start systemd services
 sudo systemctl enable --now mpd-internetradio-destuck.service

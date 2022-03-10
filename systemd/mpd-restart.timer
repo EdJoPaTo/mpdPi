@@ -1,5 +1,5 @@
 [Unit]
-Description=Restart MPD play after fritz!box network reconnect between 5-6
+Description=Start MPD play in the morning
 
 [Timer]
 RandomizedDelaySec=1min
