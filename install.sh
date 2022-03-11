@@ -18,11 +18,11 @@ sudo dpkg -i mpd-internetradio-destuck.deb
 
 # system-scripts
 sudo mkdir -p /usr/local/lib/mpd-pi/
-sudo cp -uv scripts/* /usr/local/lib/mpd-pi/
+sudo cp -v scripts/* /usr/local/lib/mpd-pi/
 
 # systemd
 sudo mkdir -p /usr/local/lib/systemd/system/
-sudo cp -uv systemd/* /usr/local/lib/systemd/system/
+sudo cp -v systemd/* /usr/local/lib/systemd/system/
 sudo systemctl daemon-reload
 
 # Start systemd services
@@ -30,7 +30,7 @@ sudo systemctl enable --now mpd-internetradio-destuck.service
 sudo systemctl enable --now mpd-restart.timer
 
 # shairport-sync config
-sudo cp -uv shairport-sync.conf /etc/shairport-sync.conf
+sudo cp -v shairport-sync.conf /etc/shairport-sync.conf
 sudo systemctl restart shairport-sync.service
 
 /usr/local/lib/mpd-pi/mpd-restart.sh
