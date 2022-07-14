@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -eux
 
 # install mpd
 sudo apt-get install -y mpd mpc shairport-sync

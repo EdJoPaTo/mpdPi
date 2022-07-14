@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eu
 
 /usr/bin/mpc -q clear
 /usr/bin/mpc -q update --wait
