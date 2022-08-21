@@ -13,7 +13,7 @@ sudo systemctl restart mpd.service
 
 # download mpd-internetradio-destuck
 wget -q --show-progress -O mpd-internetradio-destuck.deb \
-    https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.4/mpd-internetradio-destuck-v0.2.4-arm-unknown-linux-gnueabihf.deb
+    https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.5/mpd-internetradio-destuck-v0.2.5-arm-unknown-linux-gnueabihf.deb
 sudo dpkg -i mpd-internetradio-destuck.deb
 
 # system-scripts
