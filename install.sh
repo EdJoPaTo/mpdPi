@@ -28,6 +28,7 @@ sudo systemctl daemon-reload
 # Start systemd services
 sudo systemctl enable --now mpd-internetradio-destuck.service
 sudo systemctl enable --now mpd-restart.timer
+sudo systemctl enable --now mpd-nighttime.timer
 
 # shairport-sync config
 sudo cp -v shairport-sync.conf /etc/shairport-sync.conf
