@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -eu
 
-/usr/bin/mpc volume 15
-/usr/bin/mpc play
+/usr/bin/mpc -q volume 15
+/usr/bin/mpc -q play

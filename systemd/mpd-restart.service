@@ -5,6 +5,4 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/lib/mpd-pi/mpd-restart.sh
-User=mpd
-Group=audio
+ExecStart=%h/.local/share/mpd-pi/mpd-restart.sh

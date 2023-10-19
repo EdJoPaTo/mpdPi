@@ -9,7 +9,7 @@ Also, it is possible to stream AirPlay to the Raspberry Pi via [shairport-sync](
 Use the `install.sh` script to install.
 Follow the configure sections for adaptations.
 
-The installation script is specifically made for a Raspberry Pi and tested on a Raspberry Pi 3B with 32-bit Raspberry Pi OS.
+The installation script is specifically made for a Raspberry Pi and tested on a Raspberry Pi 3B with 64-bit Raspberry Pi OS bookworm.
 On other systems you may have to adapt the installation.
 
 ## Allow usage of `mpc volume`
@@ -18,6 +18,7 @@ On other systems you may have to adapt the installation.
 Find the control you want to set via `amixer scontents`.
 
 For the AUX on the Raspberry this is 'Headphone':
+
 ```plaintext
 Simple mixer control 'Headphone',0
   Capabilities: pvolume pvolume-joined pswitch pswitch-joined
@@ -26,7 +27,8 @@ Simple mixer control 'Headphone',0
   Mono: Playback -2791 [70%] [-27.91dB] [on]
 ```
 
-For the HiFiBerry Amp2 this is 'Digital':
+For the HiFiBerry Amp2 this is 'Digital' (after you [configure it](https://www.hifiberry.com/docs/software/configuring-linux-3-18-x/)):
+
 ```plaintext
 Simple mixer control 'Digital',0
   Capabilities: pvolume pswitch
@@ -37,17 +39,15 @@ Simple mixer control 'Digital',0
   Front Right: Playback 104 [50%] [-51.50dB] [on]
 ```
 
-Set this control in the `/etc/mpd.conf`:
+Set this control in the `mpd.conf`:
+
 ```plain
 audio_output {
         type            "alsa"
         name            "My ALSA Device"
-#       device          "hw:0,0"        # optional
-#       mixer_device    "default"       # optional
         mixer_control   "Headphone"
 }
 ```
-
 
 (Sadly I had no luck setting that controller as Alsa default in order to let MPD autodetect it. Hints welcome!)
 
@@ -61,9 +61,8 @@ Changing the time can be done inside the `systemd/mpd-restart.timer` file.
 Rerun the `install.sh` script in order to apply the change.
 
 [mpd-internetradio-destuck](https://github.com/EdJoPaTo/mpd-internetradio-destuck) fixes the same issue but independently of time.
-The `install.sh` script downloads the deb package for Raspberry Pi 1 and later (ARMv6).
-When running an arm64 build of your OS adapt the download link in the `install.sh`.
-ARMv7 (32 bit) should work just fine with the ARMv6 executable.
+The `install.sh` script downloads the deb package for 64-bit Raspberry Pi 3 and later (arm64).
+When running an ARMv6 or ARMv7 OS adapt the download link in the `install.sh`.
 
 ## Know Issues
 
