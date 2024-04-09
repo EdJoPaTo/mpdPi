@@ -10,7 +10,7 @@ sudo systemctl disable --now mpd.service
 systemctl --user stop mpd.service
 
 wget -q --show-progress -O /tmp/mpd-internetradio-destuck.deb \
-	https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.5/mpd-internetradio-destuck-v0.2.5-aarch64-unknown-linux-gnu.deb
+	https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.6/mpd-internetradio-destuck-v0.2.6-aarch64-unknown-linux-gnu.deb
 sudo dpkg -i /tmp/mpd-internetradio-destuck.deb
 
 sudo cp -v shairport-sync.conf /etc/shairport-sync.conf
