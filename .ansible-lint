@@ -1,0 +1,15 @@
+---
+# ansible-lint --list-rules -f full
+# see opt-in
+
+enable_list:
+  - empty-string-compare
+  - name[prefix]
+  - no-log-password
+  - no-prompting
+  - loop-var-prefix
+  - no-same-owner
+skip_list:
+  - name[missing]
+  - name[play]
+  - yaml[line-length] # Lines should be no longer than 160 chars

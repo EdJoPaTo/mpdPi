@@ -1,8 +1,0 @@
-[Unit]
-Description=Lower the volume for nighttime
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/mpc volume -q 15

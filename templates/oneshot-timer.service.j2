@@ -1,0 +1,9 @@
+[Unit]
+Description=mpdPi project, run {{ unit }}
+After=mpd.service
+Requisite=mpd.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=~
+ExecStart={{ exec }}

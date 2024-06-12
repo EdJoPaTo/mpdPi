@@ -1,9 +1,0 @@
-[Unit]
-Description=Start MPD play in the morning
-
-[Timer]
-RandomizedDelaySec=1min
-OnCalendar=*-*-* 4:30:00
-
-[Install]
-WantedBy=timers.target

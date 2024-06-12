@@ -1,9 +1,0 @@
-[Unit]
-Description=Lower the volume for nighttime
-
-[Timer]
-RandomizedDelaySec=1min
-OnCalendar=*-*-* 21:00:00
-
-[Install]
-WantedBy=timers.target

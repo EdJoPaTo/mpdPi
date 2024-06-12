@@ -1,0 +1,30 @@
+---
+- name: oneshot-timer | Create systemd service {{ unit }}
+  ansible.builtin.template:
+    src: oneshot-timer.service.j2
+    dest: "{{ ansible_user_dir }}/.config/systemd/user/{{ unit }}.service"
+    mode: u=rw,go=
+- name: oneshot-timer | Create systemd timer {{ unit }}
+  ansible.builtin.template:
+    src: oneshot-timer.timer.j2
+    dest: "{{ ansible_user_dir }}/.config/systemd/user/{{ unit }}.timer"
+    mode: u=rw,go=
+  register: timerstep
+
+- name: oneshot-timer | Ensure timer is enabled {{ unit }}
+  ansible.builtin.systemd:
+    daemon-reload: true
+    name: "{{ unit }}.timer"
+    enabled: true
+    scope: user
+  environment:
+    XDG_RUNTIME_DIR: /run/user/{{ ansible_user_uid }}
+
+- name: oneshot-timer | Restart timer {{ unit }}
+  when: timerstep.changed # noqa no-handler
+  ansible.builtin.systemd:
+    name: "{{ unit }}.timer"
+    state: restarted
+    scope: user
+  environment:
+    XDG_RUNTIME_DIR: /run/user/{{ ansible_user_uid }}

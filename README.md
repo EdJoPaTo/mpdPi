@@ -6,10 +6,15 @@ Also, it is possible to stream AirPlay to the Raspberry Pi via [shairport-sync](
 
 # Install
 
-Use the `install.sh` script to install.
-Follow the configure sections for adaptations.
+This project uses Ansible but does not really explain much about Ansible.
+It's mostly targeted at myself while being open source.
+Adapt the `hosts.ini`, then run the playbook:
 
-The installation script is specifically made for a Raspberry Pi and tested on a Raspberry Pi 3B with 64-bit Raspberry Pi OS bookworm.
+```bash
+ansible-playbook playbook.yml
+```
+
+The installation is specifically made for a Raspberry Pi 3B with 64-bit Raspberry Pi OS bookworm.
 On other systems you may have to adapt the installation.
 
 ## Allow usage of `mpc volume`
