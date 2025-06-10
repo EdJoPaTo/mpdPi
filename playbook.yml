@@ -92,9 +92,18 @@
 
     - name: Create Chillout playlist
       ansible.builtin.copy:
-        src: Chillout.m3u
-        dest: .config/mpd/playlists/
+        dest: .config/mpd/playlists/Chillout.m3u
         mode: u=rw,go=
+        content: |
+          https://hirschmilch.de:7501/chillout.mp3
+          http://hirschmilch.de:7000/chillout.mp3
+    - name: Create OrganicHouse playlist
+      ansible.builtin.copy:
+        dest: .config/mpd/playlists/OrganicHouse.m3u
+        mode: u=rw,go=
+        content: |
+          https://hirschmilch.de:7501/organic-house.mp3
+          http://hirschmilch.de:7000/organic-house.mp3
 
     - name: Copy mpd-restart.sh
       ansible.builtin.copy:
