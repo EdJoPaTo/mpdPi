@@ -58,6 +58,11 @@
         - mpd-internetradio-destuck.service
         - shairport-sync.service
 
+    - name: Enable linger
+      ansible.builtin.command:
+        cmd: loginctl enable-linger {{ ansible_user_id }}
+        creates: /var/lib/systemd/linger/{{ ansible_user_id }}
+
 - hosts: all
   handlers:
     - name: Restart mpd
@@ -143,8 +148,3 @@
         scope: user
       environment:
         XDG_RUNTIME_DIR: /run/user/{{ ansible_user_uid }}
-
-    - name: Enable linger
-      ansible.builtin.command:
-        cmd: loginctl enable-linger
-        creates: /var/lib/systemd/linger/{{ ansible_user_id }}
