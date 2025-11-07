@@ -26,7 +26,7 @@
         - mpd.socket
 
     - name: Install mpd-internetradio-destuck (aarch64)
-      when: ansible_architecture == 'aarch64'
+      when: ansible_facts.architecture == 'aarch64'
       ansible.builtin.apt:
         deb: https://github.com/EdJoPaTo/mpd-internetradio-destuck/releases/download/v0.2.6/mpd-internetradio-destuck-v0.2.6-aarch64-unknown-linux-gnu.deb
         state: present
@@ -60,8 +60,8 @@
 
     - name: Enable linger
       ansible.builtin.command:
-        cmd: loginctl enable-linger {{ ansible_user_id }}
-        creates: /var/lib/systemd/linger/{{ ansible_user_id }}
+        cmd: loginctl enable-linger {{ ansible_facts.user_id }}
+        creates: /var/lib/systemd/linger/{{ ansible_facts.user_id }}
 
 - hosts: all
   handlers:
@@ -71,7 +71,7 @@
         state: restarted
         scope: user
       environment:
-        XDG_RUNTIME_DIR: /run/user/{{ ansible_user_uid }}
+        XDG_RUNTIME_DIR: /run/user/{{ ansible_facts.user_uid }}
   tasks:
     - name: Ensure directories
       ansible.builtin.file:
@@ -147,4 +147,4 @@
         enabled: true
         scope: user
       environment:
-        XDG_RUNTIME_DIR: /run/user/{{ ansible_user_uid }}
+        XDG_RUNTIME_DIR: /run/user/{{ ansible_facts.user_uid }}
